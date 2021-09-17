@@ -12,6 +12,11 @@ namespace cSharpCoding
             BasicCalculator(10, 30, "division");
             MadLibs("red", "violets", "Tom Hanks");
             Console.WriteLine(guessingGame());
+            Console.WriteLine(getPow(3, -2));
+            Console.WriteLine(getPow(3, 2));
+            Console.WriteLine(getPow(4, 4));
+            Console.WriteLine(getPow(4,-4));
+            twoDimensionalArray();
         }
 
         static void BasicCalculator(double num1, double num2, string operation)
@@ -91,6 +96,32 @@ namespace cSharpCoding
                 result = "Congratulations, you have guessed the secret number in " + guessCount + " tries.";
             }
             return result;
+        }
+
+        static decimal getPow(decimal baseNum, decimal powNum)
+        {
+            decimal result = 1;
+            for (int i = 0; i < Math.Abs(powNum); i++)
+            {
+                result = result * baseNum;
+            }
+            if (powNum < 0)
+            {
+                result = 1 / result;
+            } 
+            return result;
+        }
+
+        static void twoDimensionalArray()
+        {
+            int[,] matrixGrid =
+            {
+                { 1,2,3 },
+                { 3,4,5 },
+                { 5,6,7 }
+            };
+            Console.WriteLine(matrixGrid[1,2]);
+            Console.WriteLine(matrixGrid[2,2]);
         }
     }
 }
